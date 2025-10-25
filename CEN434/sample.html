@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Student Portfolio — Extracurricular Activities</title>
+  <style>
+    :root{--accent:#3b82f6;--muted:#6b7280;--bg:#f7fafc}
+    *{box-sizing:border-box}
+    body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; background:var(--bg); color:#0f172a}
+    .container{max-width:980px;margin:32px auto;padding:24px;background:#fff;border-radius:14px;box-shadow:0 8px 30px rgba(2,6,23,.08)}
+    header{display:flex;gap:18px;align-items:center}
+    .avatar{width:92px;height:92px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#6366f1);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:28px}
+    h1{margin:0;font-size:20px}
+    p.lead{margin:6px 0 0;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:22px;margin-top:22px}
+    .card{background:#fff;border-radius:10px;padding:16px;border:1px solid #eef2ff}
+    .activities{display:grid;gap:12px}
+    .activity{display:flex;gap:12px;align-items:flex-start;padding:12px;border-radius:8px;border:1px solid #f1f5f9}
+    .activity h4{margin:0;font-size:15px}
+    .meta{font-size:13px;color:var(--muted);margin-top:6px}
+    .tags{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+    .pill{background:#f1f5f9;padding:6px 8px;border-radius:999px;font-size:12px;color:#0f172a}
+    .controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+    button.btn{border:1px solid #e6eef9;background:#fff;padding:8px 12px;border-radius:8px;cursor:pointer}
+    button.btn.active{background:var(--accent);color:#fff;border-color:transparent}
+    .stats{display:flex;gap:12px;margin-top:8px}
+    .stat{background:#f8fafc;padding:10px;border-radius:8px;text-align:center;flex:1}
+    footer{margin-top:20px;color:var(--muted);font-size:13px}
+    @media (max-width:880px){.grid{grid-template-columns:1fr}.avatar{width:72px;height:72px}}
+    /* Print-friendly */
+    @media print{body{background:#fff} .container{box-shadow:none;border:none} .controls, footer{display:none}}
+  </style>
+</head>
+<body>
+  <main class="container" role="main">
+    <header>
+      <div class="avatar" aria-hidden="true">YA</div>
+      <div>
+        <h1>Yemi Afolayan — Student Portfolio</h1>
+        <p class="lead">Focus: Grade 11 • School: Springfield High • Interests: STEM, Arts, Community</p>
+        <div class="stats" aria-hidden="true">
+          <div class="stat"><div style="font-weight:700">8</div><div style="color:var(--muted)">Clubs & Teams</div></div>
+          <div class="stat"><div style="font-weight:700">150+</div><div style="color:var(--muted)">Volunteer Hours</div></div>
+          <div class="stat"><div style="font-weight:700">3</div><div style="color:var(--muted)">Leadership Roles</div></div>
+        </div>
+      </div>
+    </header>
+
+    <div class="grid">
+      <section>
+        <article class="card" aria-labelledby="activities-heading">
+          <h2 id="activities-heading">Extracurricular Activities</h2>
+
+          <div class="controls" role="tablist" aria-label="Filter activities">
+            <button class="btn active" data-filter="all">All</button>
+            <button class="btn" data-filter="sports">Sports</button>
+            <button class="btn" data-filter="arts">Arts</button>
+            <button class="btn" data-filter="volunteer">Volunteer</button>
+            <button class="btn" data-filter="leadership">Leadership</button>
+            <button class="btn" data-filter="tech">Tech</button>
+          </div>
+
+          <div class="activities" id="activities-list">
+
+            <div class="activity" data-type="leadership clubs">
+              <div aria-hidden="true">🏛️</div>
+              <div>
+                <h4>Student Council — Treasurer</h4>
+                <div class="meta">Planned fundraising, managed a budget of school event funds, coordinated with teachers (2024–present)</div>
+              </div>
+              <div class="tags">
+                <div class="pill">Leadership</div>
+                <div class="pill">Organisation</div>
+              </div>
+            </div>
+
+            <div class="activity" data-type="sports">
+              <div aria-hidden="true">⚽</div>
+              <div>
+                <h4>Soccer Team — Midfielder</h4>
+                <div class="meta">Train 4x weekly, regional championships, teamwork and resilience (2023–present)</div>
+              </div>
+              <div class="tags"><div class="pill">Sports</div></div>
+            </div>
+
+            <div class="activity" data-type="volunteer">
+              <div aria-hidden="true">🐾</div>
+              <div>
+                <h4>Animal Shelter — Volunteer</h4>
+                <div class="meta">Supported shelter operations, social media awareness campaigns, 60+ service hours (Summer 2024)</div>
+              </div>
+              <div class="tags"><div class="pill">Volunteer</div></div>
+            </div>
+
+            <div class="activity" data-type="tech clubs">
+              <div aria-hidden="true">🤖</div>
+              <div>
+                <h4>Robotics Club</h4>
+                <div class="meta">Built competition robot—electronics, Python scripting for sensors, placed 2nd locally (2024)</div>
+              </div>
+              <div class="tags"><div class="pill">Tech</div><div class="pill">STEM</div></div>
+            </div>
+
+            <div class="activity" data-type="arts">
+              <div aria-hidden="true">🎭</div>
+              <div>
+                <h4>Drama Club — Lead Actor</h4>
+                <div class="meta">Performed in two school productions; grew confidence, public speaking, and stagecraft (2022–2024)</div>
+              </div>
+              <div class="tags"><div class="pill">Arts</div></div>
+            </div>
+
+            <div class="activity" data-type="arts music">
+              <div aria-hidden="true">🎸</div>
+              <div>
+                <h4>School Band — Guitarist</h4>
+                <div class="meta">Weekly rehearsals, community concerts, collaboration with other musicians (2023–present)</div>
+              </div>
+              <div class="tags"><div class="pill">Arts</div><div class="pill">Music</div></div>
+            </div>
+
+            <div class="activity" data-type="volunteer leadership">
+              <div aria-hidden="true">🌱</div>
+              <div>
+                <h4>Community Garden Project — Coordinator</h4>
+                <div class="meta">Organised student teams, wrote grant proposals, taught younger students about sustainable gardening (2023)</div>
+              </div>
+              <div class="tags"><div class="pill">Volunteer</div><div class="pill">Leadership</div></div>
+            </div>
+
+            <div class="activity" data-type="tech">
+              <div aria-hidden="true">💻</div>
+              <div>
+                <h4>After-school Coding Club</h4>
+                <div class="meta">Coached peers on HTML/CSS/JS, small web projects, hackathon participation (2024)</div>
+              </div>
+              <div class="tags"><div class="pill">Tech</div></div>
+            </div>
+
+          </div>
+
+        </article>
+
+        <article class="card" style="margin-top:14px">
+          <h3>How to use this section</h3>
+          <ul>
+            <li>Click a filter to show only activities within that category.</li>
+            <li>For each activity you can add: dates, role, measurable outcomes, and contact (coach/teacher) for references.</li>
+            <li>Use the print stylesheet (File → Print) to produce a one-page summary for applications.</li>
+          </ul>
+        </article>
+
+      </section>
+
+      <aside>
+        <div class="card">
+          <h3>Quick Profile</h3>
+          <p><strong>GPA:</strong> 3.8 • <strong>Expected graduation:</strong> 2026</p>
+          <h4 style="margin-top:12px">Skills</h4>
+          <ul>
+            <li>Leadership & event planning</li>
+            <li>Public speaking & debate</li>
+            <li>Basic web dev (HTML/CSS/JS)</li>
+            <li>Project teamwork & time management</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h3>Contact</h3>
+          <p>Email: <a href="mailto:yemi.school@example.com">yemi.school@example.com</a></p>
+          <p style="color:var(--muted);font-size:13px">Add your phone, LinkedIn, or portfolio URL here.</p>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h3>Achievements</h3>
+          <ol>
+            <li>Robotics Regional 2nd Place — 2024</li>
+            <li>Debate: State Semi-finalist — 2023</li>
+            <li>Community Service Award — 2023</li>
+          </ol>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      Tip: customise the activities and dates to match your real experience. Include measurable outcomes where possible ("raised ₦50,000", "mentored 12 students", etc.).
+    </footer>
+  </main>
+
+  <script>
+    // Simple filter for activities
+    const buttons = document.querySelectorAll('.controls .btn');
+    const items = document.querySelectorAll('.activity');
+
+    function setActive(btn){ buttons.forEach(b=>b.classList.remove('active')); btn.classList.add('active'); }
+
+    buttons.forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        setActive(btn);
+        const filter = btn.getAttribute('data-filter');
+        items.forEach(it=>{
+          if(filter === 'all') { it.style.display = ''; return; }
+          const types = it.getAttribute('data-type').split(' ');
+          if(types.includes(filter)) it.style.display = '';
+          else it.style.display = 'none';
+        });
+      });
+    });
+
+    // Accessibility: keyboard focus for filter buttons
+    buttons.forEach(b=>b.setAttribute('tabindex','0'));
+  </script>
+</body>
+</html>
